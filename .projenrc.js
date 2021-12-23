@@ -2,7 +2,7 @@ const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
   cdkVersion: '2.3.0',
   defaultReleaseBranch: 'main',
-  name: 'eks-faragte-lab',
+  name: 'eks-fargate-lab',
   depsUpgrade: {
     workflowOptions: {
       labels: ['auto-approve'],
