@@ -13,6 +13,6 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['neilkuan'],
   },
-  gitignore: ['cdk.out', 'images', 'cdk.context.json'],
+  gitignore: ['cdk.out', 'cdk.context.json'],
 });
 project.synth();

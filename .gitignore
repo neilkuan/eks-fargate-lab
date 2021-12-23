@@ -33,7 +33,6 @@ jspm_packages/
 .yarn-integrity
 .cache
 cdk.out
-images
 cdk.context.json
 !/.projenrc.js
 /test-reports/

@@ -3,6 +3,7 @@ import {
   aws_eks as eks,
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import { AlbIngressLabConstruct } from './alb-ingress-lab';
 import { NlbServiceLabConstruct } from './nlb-service-lab';
 
 export class MyStack extends Stack {
@@ -20,6 +21,9 @@ export class MyStack extends Stack {
       eksFargateCluster: cluster,
     });
 
+    new AlbIngressLabConstruct(this, 'AlbIngressLab', {
+      eksFargateCluster: cluster,
+    });
   }
 }
 
