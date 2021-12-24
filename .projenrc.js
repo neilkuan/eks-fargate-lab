@@ -3,7 +3,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   cdkVersion: '2.3.0',
   defaultReleaseBranch: 'main',
   name: 'eks-fargate-lab',
-  depsUpgrade: {
+  depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve'],
       secret: 'AUTOMATION_GITHUB_TOKEN',
