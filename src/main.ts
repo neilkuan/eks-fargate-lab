@@ -3,10 +3,10 @@ import {
   aws_eks as eks,
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import { AlbIngressLabConstruct } from './alb-ingress-lab';
 import { EfsCsiStorageClassConstruct } from './efs-csi';
 import { FargateEfsSampleConstruct } from './fargate-mount-efs-sample-app';
-// import { AlbIngressLabConstruct } from './alb-ingress-lab';
-// import { NlbServiceLabConstruct } from './nlb-service-lab';
+import { NlbServiceLabConstruct } from './nlb-service-lab';
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
@@ -33,13 +33,13 @@ export class MyStack extends Stack {
     });
     fec.node.addDependency(efsCsiStorageClassConstruct);
 
-    // new NlbServiceLabConstruct(this, 'NlbServiceLab', {
-    //   eksFargateCluster: cluster,
-    // });
+    new NlbServiceLabConstruct(this, 'NlbServiceLab', {
+      eksFargateCluster: cluster,
+    });
 
-    // new AlbIngressLabConstruct(this, 'AlbIngressLab', {
-    //   eksFargateCluster: cluster,
-    // });
+    new AlbIngressLabConstruct(this, 'AlbIngressLab', {
+      eksFargateCluster: cluster,
+    });
   }
 }
 
