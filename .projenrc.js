@@ -6,7 +6,6 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve'],
-      secret: 'AUTOMATION_GITHUB_TOKEN',
     },
   },
   autoApproveOptions: {
