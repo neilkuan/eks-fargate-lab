@@ -1,6 +1,6 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
-  cdkVersion: '2.3.0',
+  cdkVersion: '2.20.0',
   defaultReleaseBranch: 'main',
   name: 'eks-fargate-lab',
   depsUpgradeOptions: {
