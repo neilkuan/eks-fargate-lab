@@ -15,5 +15,9 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   },
   workflowNodeVersion: '^14.17.0',
   gitignore: ['cdk.out', 'cdk.context.json'],
+  typescriptVersion: '4.6',
+  devDeps: [
+    '@types/prettier@2.6.0',
+  ],
 });
 project.synth();
