@@ -57,20 +57,6 @@ test('Test EFS-CSI', () => {
             '[{"apiVersion":"v1","kind":"ConfigMap","metadata":{"name":"aws-auth","namespace":"kube-system","labels":{"aws.cdk.eks/prune-c8276effa82e8898b42b9c78f505165726793cff05":""}},"data":{"mapRoles":"[{\\"rolearn\\":\\"',
             {
               'Fn::GetAtt': [
-                'EksClusterMastersRole3F49FAC3',
-                'Arn',
-              ],
-            },
-            '\\",\\"username\\":\\"',
-            {
-              'Fn::GetAtt': [
-                'EksClusterMastersRole3F49FAC3',
-                'Arn',
-              ],
-            },
-            '\\",\\"groups\\":[\\"system:masters\\"]},{\\"rolearn\\":\\"',
-            {
-              'Fn::GetAtt': [
                 'EksClusterfargateprofiledefaultPodExecutionRole22895DDB',
                 'Arn',
               ],
