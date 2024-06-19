@@ -13,7 +13,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['neilkuan', 'github-actions'],
   },
-  workflowNodeVersion: '^16.20.0',
+  workflowNodeVersion: '^20',
   gitignore: ['cdk.out', 'cdk.context.json'],
   typescriptVersion: '4.6',
   devDeps: [
