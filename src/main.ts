@@ -1,3 +1,4 @@
+import { KubectlV32Layer } from '@aws-cdk/lambda-layer-kubectl-v32';
 import {
   App, Stack, StackProps,
   aws_eks as eks,
@@ -13,10 +14,11 @@ export class MyStack extends Stack {
     super(scope, id, props);
     // will help you create one vpc, fargate profile, and nat gateway for each azs.
     const cluster = new eks.FargateCluster(this, 'EksCluster', {
-      version: eks.KubernetesVersion.V1_21,
+      version: eks.KubernetesVersion.V1_32,
       albController: {
         version: eks.AlbControllerVersion.V2_3_0,
       },
+      kubectlLayer: new KubectlV32Layer(this, 'KubectlV32Layer'),
     });
 
     const efsCsiStorageClassConstruct =
