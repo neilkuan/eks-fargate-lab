@@ -1,6 +1,6 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
-  cdkVersion: '2.20.0',
+  cdkVersion: '2.181.0',
   defaultReleaseBranch: 'main',
   name: 'eks-fargate-lab',
   depsUpgradeOptions: {
@@ -18,6 +18,9 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   typescriptVersion: '4.6',
   devDeps: [
     '@types/prettier@2.6.0',
+  ],
+  deps: [
+    '@aws-cdk/lambda-layer-kubectl-v32',
   ],
 });
 project.synth();
